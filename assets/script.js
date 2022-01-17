@@ -1,5 +1,8 @@
+
+// question index
 var currentQuestionIndex = 0;
 
+// question and answer array
 var questionArray = [
     {
         text: "What is 1 + 1?",
@@ -16,15 +19,24 @@ var questionArray = [
      
         correctAnswer: 20
     }, {
-        text: "Third question",
+        text: "what is 3 x 3",
         choices: [
-            25, 50, 90, 20
+            21, 12, 9, 33
         ],
 
-        correctAnswer: 20
+        correctAnswer: 9
+    }, {
+        text: "what is 8 x 8",
+        choices: [
+            25, 64, 32, 20
+        ],
+        correctAnswer: 64
+
     }
 ]
 
+
+// tells console if answers are right or wrong
 console.log(questionArray)
 
 function checkAnswer(event) {
@@ -48,6 +60,8 @@ function checkAnswer(event) {
 }
 
 
+// moves thorugh questions
+
 function start() {
 
     if(currentQuestionIndex < questionArray.length ) {
@@ -62,12 +76,14 @@ function start() {
         }
 
        
+       
 
-
-
+// alert pops up to say youve finished quiz
+// need to make this a spot to add initials for final score
         currentQuestionIndex++;
     } else {
-        alert("You finished the quiz! Your score is...")
+        var playerName = prompt("add your initials to save your score");
+        console.log(playerName);
     }
 
     
