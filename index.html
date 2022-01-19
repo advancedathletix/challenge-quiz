@@ -10,14 +10,21 @@
 
 <body>
 
+
+    <!-- highscore-->
+    <p id="highScore" class="header-h2">High Scores</p>
+
     <!-- timer -->
     <p>time: 
         <span id="timer-element"></span>         
     </p>
-    <div id="start-div">
+   
+
+    <!-- start button-->
+    <div id="startdiv">
         <p>Welcome to the javascript quiz</p>
         <p>Your score will be based on answering the question correctly and how quickly you answer. For every question you answer correctly, you will be awarded 10 seconds. If you answer incorrectly you will lose 15 seconds. Press "start" when you are ready.</p>
-    <button class="startBtn">Start</button>
+    <button id="startBtn">Start</button>
 </div>
 
 <!-- quiz choices -->
@@ -41,8 +48,8 @@
         <div>
                 <form id="score-board" method="POST">
                   <label for="score-text"></label>
-                  <input type="text" placeholder="Name here" name="score-name" id="score-text" />
-                  <button id="submit-button">Submit</button>
+                  <input type="text" placeholder="Name here" name="score-name" id="score-txt" />
+                  <button id="submit-btn">Submit</button>
                 </form>
                 <ul id="leader-list"></ul>
         </div>

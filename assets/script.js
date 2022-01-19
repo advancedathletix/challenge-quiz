@@ -1,3 +1,61 @@
+// create variables
+var yourScore = document.getElementById("yourScore");
+
+var quizBox = document.getElementById("answer-buttons");
+
+
+var leaderScore = document.getElementById("high-score");
+var leaders = [];
+var leaderList = document.getElementById("leader-list");
+var submitButton = document.getElementById("submit-btn");
+var scoreInput = document.getElementById("score-txt");
+var name = document.getElementById("score-name");
+var startButton = document.getElementById("startBtn");
+var welcome = document.getElementById("start-div");
+var highScoreLink = document.getElementById("highScore");
+
+
+
+
+init();
+
+function init() {
+high-score.style.display = "none";
+answer-buttons.style.display = "none";
+var lastUser = JSON.parse(localStorage.getItem("leader-high-score"));
+
+    if (lastUser !== null){
+        leaders = lastUser;
+    }
+}
+
+//start quiz
+
+
+document.querySelector("#startBtn").addEventListener('click',startQuiz);
+
+function start() {
+    answer-buttons.style.display = "block";
+    startButton.style.display = "none";
+    startdiv.style.display ="none";
+
+    
+
+    timerId = setInterval(function() {
+        time--;
+        timerElement.textContent = time + "Seconds left for quiz";
+        renderQuestions();
+
+        if(time <= 0 ){
+            leaderboard();
+        }
+
+    }, 1000)
+
+
+    
+
+
 // question index
 var currentQuestionIndex = 0;
 
@@ -71,17 +129,7 @@ function checkAnswer(event) {
 
 // moves thorugh questions
 
-function start() {
 
-    timerId = setInterval(function() {
-        time--;
-        timerElement.textContent = time;
-
-        if(time <= 0 ){
-            endQuiz();
-        }
-
-    }, 1000)
 
     
 
@@ -113,9 +161,6 @@ function start() {
 
 function endQuiz() {}
 
+answer-buttons.style.display = "none";
+startButton.style.display = "none";
 
-
-var startBtn = document.querySelector(".startBtn")
-startBtn.addEventListener("click", start);
-
-// document.querySelector(".startBtn").addEventListener("click", start)
