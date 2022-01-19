@@ -4,8 +4,12 @@ button {
     padding: 6px;
 }
 
-.btn-grid {
+#answer-buttons {
     display:grid;
     gap: 10px;
     margin: 20px 0;
+}
+
+.hide {
+    display: none;
 }

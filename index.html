@@ -1,22 +1,41 @@
-!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Challenge-Quiz</title>
+    <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-    <button class="startBtn">Start</button>
 
-    <div id="answer-buttons" class="btn-grid">
-    <h2 id="question-text">Question Text</h2>
-    <button id="choice0-btn">Choice 0</button>
-    <button id="choice1-btn">Choice 1</button>
-    <button id="choice2-btn">Choice 2</button>
-    <button id="choice3-btn">Choice 3</button>
+<body>
+    <p>time: 
+        <span id="timer-element"></span>         
+    </p>
+    <div id="start-div">
+    <button class="startBtn">Start</button>
+</div>
+
+
+    <div id="answer-buttons" class="hide">
+        <h2 id="question-text">Question Text</h2>
+        <button type="submit" id="choice0-btn">Choice 0</button>
+        <button type="submit" id="choice1-btn">Choice 1</button>
+        <button type="submit" id="choice2-btn">Choice 2</button>
+        <button type="submit" id="choice3-btn">Choice 3</button>
+    </div>
+
+    <div id="end-div" class="hide">
+        <h2>QUIZ OVER</h2>
+        <p>Your score is <span id="final-score"></span>
+        </p>
+        initials
+        <input>
+        <button id="submit">Submit</button>
+    </div>
 
     <script src="assets/script.js"></script>
-    <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/questions.js"></script>
 </body>
+
 </html>

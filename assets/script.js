@@ -1,39 +1,11 @@
 
-// question index
-var currentQuestionIndex = 0;
 
-// question and answer array
-var questionArray = [
-    {
-        text: "What is 1 + 1?",
-        correctAnswer: 2,
-        choices: [
-            2, 5, 9, 6
-        ]
-    
-    }, {
-        text: "What is 10 + 10",
-        choices: [
-            25, 50, 90, 20
-        ],
-     
-        correctAnswer: 20
-    }, {
-        text: "what is 3 x 3",
-        choices: [
-            21, 12, 9, 33
-        ],
 
-        correctAnswer: 9
-    }, {
-        text: "what is 8 x 8",
-        choices: [
-            25, 64, 32, 20
-        ],
-        correctAnswer: 64
 
-    }
-]
+// timer
+var timerElement = document.querySelector("#timer-element")
+var time = 60
+var timerId;
 
 
 // tells console if answers are right or wrong
@@ -45,24 +17,38 @@ function checkAnswer(event) {
 
     console.log(questionArray[currentQuestionIndex-1].correctAnswer)
     var correctAnswer = questionArray[currentQuestionIndex-1].correctAnswer
+    
 
     if(selectedAnswer == correctAnswer) {
-        correctAnswer += 1;
+        alert("correct answer")
 
 
 
     } else {
-        wrong += -10 
+        alert("Wrong answer")
         
     }
 
     
 }
+// 
 
 
 // moves thorugh questions
 
 function start() {
+
+    timerId = setInterval(function() {
+        time--;
+        timerElement.textContent = time;
+
+        if(time <= 0 ){
+            endQuiz();
+        }
+
+    }, 1000)
+
+    
 
     if(currentQuestionIndex < questionArray.length ) {
         // alert(questionArray[currentQuestionIndex].text)
@@ -89,6 +75,10 @@ function start() {
     
     // 
 }
+
+function endQuiz() {}
+
+
 
 var startBtn = document.querySelector(".startBtn")
 startBtn.addEventListener("click", start);
