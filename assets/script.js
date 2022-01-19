@@ -1,6 +1,8 @@
 // create variables
+var timeLeft = 60;
+var timerInterval = 0;
 var yourScore = document.getElementById("yourScore");
-
+var lastQuestionIndex = questionArray.length -1;
 var quizBox = document.getElementById("answer-buttons");
 
 
@@ -59,7 +61,19 @@ function start() {
         choice1-btn.innerHTML = questionArray[i].choice1;
         choice2-btn.innerHTML = questionArray[i].choice2;
         choice3-btn.innerHTML = questionArray[i].choice3;
+    };
+
+    document.getElementById("nextButton").addEventListener("click", function(){
+        //when quiz is finished
+if (i > lastQuestionIndex) {
+    clearInterval(timerInterval);
+    leaderBoard();
+ } else {
+        renderQuestions();
+        i++;
     }
+});
+    
 
 
 // question index
