@@ -53,7 +53,13 @@ function start() {
     }, 1000)
 
 
-    
+    function renderQuestions(){
+        renderQuestions.innerHTML = questionArray[i].question-text;
+        choice0-btn.innerHTML = questionArray[i].choice0;
+        choice1-btn.innerHTML = questionArray[i].choice1;
+        choice2-btn.innerHTML = questionArray[i].choice2;
+        choice3-btn.innerHTML = questionArray[i].choice3;
+    }
 
 
 // question index
