@@ -3,7 +3,7 @@ var timeLeft = 60;
 var timerInterval = 0;
 var yourScore = document.getElementById("yourScore");
 var lastQuestionIndex = questionArray.length -1;
-var quizBox = document.getElementById("answer-buttons");
+var quizBox = document.getElementById("quizBox");
 
 
 var leaderScore = document.getElementById("high-score");
@@ -23,7 +23,7 @@ init();
 
 function init() {
 high-score.style.display = "none";
-answer-buttons.style.display = "none";
+quizBox.style.display = "none";
 var lastUser = JSON.parse(localStorage.getItem("leader-high-score"));
 
     if (lastUser !== null){
@@ -37,7 +37,7 @@ var lastUser = JSON.parse(localStorage.getItem("leader-high-score"));
 document.querySelector("#startBtn").addEventListener('click',startQuiz);
 
 function start() {
-    answer-buttons.style.display = "block";
+    quizBox.style.display = "block";
     startButton.style.display = "none";
     startdiv.style.display ="none";
 
@@ -73,7 +73,52 @@ if (i > lastQuestionIndex) {
         i++;
     }
 });
+
+function checkAnswer(answer){
+    if (answer === questionArray[i].correct) {
+        timeLeft +=10;
+    }if (answer !== questionArr[i].correct){
+       
+        // decrease timne 
+        timeLeft -=10;
+    }
+}
     
+
+function leaderBoard(){
+    quizBox.style.display = "none";
+    high-score.style.display = "block"
+}
+
+submitButton.addEventListener("click", function(event){
+    event.preventDefault();
+
+}
+
+var scoreText = scoreInput.value.trim();
+
+var div = document.createElement("div");
+    div.textContent = "Your score is:" +" " + timeLeft;
+    leaderList.appendChild(div);
+
+    leaderBoard();
+    storeScore();
+    storeLeaders();
+}};
+
+function storeScore(event) {
+    leaders[leaders.length] = {
+        names: scoreInput.value,
+        savedScores: timeLeft
+    }
+}        
+
+function storeLeaders() {
+    // Stringify and set "scores" key in localStorage to leader array
+    localStorage.setItem("leaderHighScore", JSON.stringify(leaders));
+}
+
+
 
 
 // question index
@@ -181,6 +226,7 @@ function checkAnswer(event) {
 
 function endQuiz() {}
 
-answer-buttons.style.display = "none";
+quizBox.style.display = "none";
 startButton.style.display = "none";
-
+startdiv.style.display = "none";
+high-score.style.display = "block";
