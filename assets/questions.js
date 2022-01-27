@@ -1,36 +1,39 @@
-// question index
-var currentQuestionIndex = 0;
+// Store quiz questions:
 
-// question and answer array
-var questionArray = [
+var questionArr = [
     {
-        text: "What is 1 + 1?",
-        correctAnswer: 2,
-        choices: [
-            2, 5, 9, 6
-        ]
-    
-    }, {
-        text: "What is 10 + 10",
-        choices: [
-            25, 50, 90, 20
-        ],
-     
-        correctAnswer: 20
-    }, {
-        text: "what is 3 x 3",
-        choices: [
-            21, 12, 9, 33
-        ],
-
-        correctAnswer: 9
-    }, {
-        text: "what is 8 x 8",
-        choices: [
-            25, 64, 32, 20
-        ],
-        correctAnswer: 64
-
+    question: "The condition in an if / else statement is enclosed within ____.",
+    choiceA : "quotes",
+    choiceB : "curly brackets",
+    choiceC : "parentheses",
+    correct : "A"
+    },  
+    {
+    question: "What does CSS stand for?",
+    choiceA : "California Style Sheet",
+    choiceB : "Cryptic Standing Sheet",
+    choiceC : "Cascading Style Sheet",
+    correct : "C"
+    }, 
+    {
+    question: "What event occurs when a user clicks on an HTML element?",
+    choiceA : "onclick",
+    choiceB : "ondown",
+    choiceC : "onmouse",
+    correct : "A"
+    },
+    {
+    question: "How do you write 'Hello' in an alert?",
+    choiceA : "alertBox('Hello')",
+    choiceB : "alert('Hello')",
+    choiceC : "msg('Hello')",
+    correct : "B"
+    }, 
+    {
+    question: "Javascript is the same as Java?",
+    choiceA : "true",
+    choiceB : "false",
+    choiceC : "I don't know",
+    correct : "B"
     }
-]
-// end of array
+];
